@@ -84,3 +84,8 @@ exports.protect=async(req,res,next)=>{
        next(err);  
      }
 };
+
+exports.givetoken=(req,res,next)=>{
+  console.log(req.user);
+  createSendToken(req.user,200,req,res)
+}

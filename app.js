@@ -3,11 +3,12 @@ require('dotenv').config()
 const cors=require('cors');
 const logger=require('morgan');
 const mongoose = require('mongoose');
-
 const app=express();
 const port =process.env.PORT;
+const passport=require('passport')
 
-
+app.use(passport.initialize());
+// app.use(passport.session());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
